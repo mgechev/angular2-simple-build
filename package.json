@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
+    "typings": "typings install",
+    "serve": "http-server . -p 5556",
+    "postinstall": "npm run typings",
     "build": "npm run clean && tsc",
     "build_prod": "npm run build && browserify -s main dist/main.js > dist/bundle.js && npm run minify",
     "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js"
@@ -14,11 +17,14 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^13.0.1",
+    "http-server": "^0.9.0",
     "typescript": "^1.9.0-dev.20160625-1.0",
+    "typings": "1.0.4",
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
     "@angular/common": "^2.0.0-rc.3",
+    "@angular/compiler": "^2.0.0-rc.3",
     "@angular/core": "^2.0.0-rc.3",
     "@angular/platform-browser": "^2.0.0-rc.3",
     "@angular/platform-browser-dynamic": "^2.0.0-rc.3",
