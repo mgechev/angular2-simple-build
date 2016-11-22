@@ -8,7 +8,7 @@
     "clean": "rm -rf dist",
     "serve": "http-server . -p 5556",
     "build": "npm run clean && tsc",
-    "build_prod": "npm run build && browserify -s main dist/main.js > dist/bundle.js && npm run minify",
+    "build_prod": "npm run build && browserify -s main app/main.js > dist/bundle.js && npm run minify",
     "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js"
   },
   "author": "Minko Gechev <mgechev@gmail.com>",
